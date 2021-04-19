@@ -1,0 +1,31 @@
+<div class="container" style="min-height: 89vh;" >
+  <div class="row pt-5">
+    <div class="col-md-6 mx-auto">
+      <div class="card">
+        <div class="card-header bg-dark text-white text-center">
+          <h3>Login</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="form" autocomplete="off" (ngSubmit)="doLogin()">
+            <div class="form-group">
+              <label>Nome</label>
+              <input type="text" name="newname" class="form-control" formControlName="nome" />
+            </div>
+            <div class="form-group">
+              <label for="">Senha</label>
+              <input
+                type="password"
+                name="password"
+                class="form-control"
+                formControlName="senha"
+              />
+            </div>
+            <div class="align-items-center text-center">
+                <button class=" btn btn-success ">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false"
+      style="background-color: #212121;"
+      >
+    <mat-toolbar style="color: white;">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a style="color: white;" mat-list-item routerLink="home">Home</a>
+      <a *ngIf="!isLoggedIn" style="color: white;" mat-list-item routerLink="login">Login</a>
+      <a style="color: white;" mat-list-item routerLink="contatos">Contatos</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" style="background-color: #212121;">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="true">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Agenda Angular</span>
+    </mat-toolbar>
+    <div style="background-color: white;">
+      <router-outlet></router-outlet>
+    </div>
+   
+   
+  </mat-sidenav-content>
+</mat-sidenav-container>
